@@ -1,7 +1,7 @@
 import styles from "./Tasks.module.css";
 import { Task } from "./Task/Task";
 
-export function Tasks() {
+export function Tasks({ tasks }) {
   return (
     <section className={styles.tasks}>
       <header className={styles.header}>
@@ -15,7 +15,9 @@ export function Tasks() {
         </div>
       </header>
       <div className={styles.list}>
-        <Task />
+        {tasks.map((task) => {
+          <Task key={task.id} task={task} />;
+        })}
       </div>
     </section>
   );

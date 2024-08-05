@@ -6,10 +6,21 @@ import { Tasks } from "./assets/components/Tasks";
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  function addTask(taskTitle) {
+    setTasks([
+      ...tasks,
+      {
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false,
+      },
+    ]);
+  }
+
   return (
     <>
-      <Header />
-      <Tasks />
+      <Header onAddTask={addTask} />
+      <Tasks task={tasks} />
     </>
   );
 }
