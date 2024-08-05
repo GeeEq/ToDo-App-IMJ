@@ -1,0 +1,19 @@
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  position: relative;
+  color: aqua;
+}
+p {
+  font-size: xx-large;
+  font-weight: 600;
+}
+.to {
+  color: aqua;
+}
+.do {
+  color: rgb(201, 158, 241);
+}
