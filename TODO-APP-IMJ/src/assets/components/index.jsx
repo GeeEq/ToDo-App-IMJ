@@ -7,6 +7,10 @@ export function Header() {
         <span className={styles.to}>To</span>
         <span className={styles.do}>Do</span> App
       </p>
+      <form className={styles.newTaskForm}>
+        <input placeholder="Add a new task" type="text" />
+        <button>Create</button>
+      </form>
     </header>
   );
 }
