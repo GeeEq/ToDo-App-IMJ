@@ -1,4 +1,5 @@
 import styles from "./Task.module.css";
+import { TbTrash } from "react-icons/tb";
 
 export function Task() {
   return (
@@ -7,7 +8,9 @@ export function Task() {
         <div />
       </button>
       <p>Add something to do</p>
-      <button className={styles.deleteButton}></button>
+      <button className={styles.deleteButton}>
+        <TbTrash size={20} />
+      </button>
     </div>
   );
 }
