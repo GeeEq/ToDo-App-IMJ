@@ -15,9 +15,9 @@ export function Tasks({ tasks }) {
         </div>
       </header>
       <div className={styles.list}>
-        {tasks.map((task) => {
-          <Task key={task.id} task={task} />;
-        })}
+        {tasks.map((task) => (
+          <Task key={task.id} task={task} />
+        ))}
       </div>
     </section>
   );
