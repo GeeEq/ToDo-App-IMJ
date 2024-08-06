@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Header } from "./assets/components";
 import { Tasks } from "./assets/components/Tasks";
@@ -20,9 +20,12 @@ function App() {
     setTasks(newTasks);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks));
   }
+  useEffect(() => {
+    loadSavedTasks();
+  }, []);
 
   function addTask(taskTitle) {
-    setTasks([
+    setTasksAndSave([
       ...tasks,
       {
         id: crypto.randomUUID(),
@@ -35,6 +38,7 @@ function App() {
     const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasksAndSave(newTasks);
   }
+
   return (
     <>
       <Header onAddTask={addTask} />
