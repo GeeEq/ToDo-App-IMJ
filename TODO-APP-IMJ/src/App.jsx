@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { Header } from "./assets/components";
 import { Tasks } from "./assets/components/Tasks";
+// import { ErrorBoundary } from "./assets/components/ErrorBoundary";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -20,7 +21,9 @@ function App() {
   return (
     <>
       <Header onAddTask={addTask} />
+      {/* <ErrorBoundary> */}
       <Tasks task={tasks} />
+      {/* </ErrorBoundary> */}
     </>
   );
 }
